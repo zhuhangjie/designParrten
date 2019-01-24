@@ -13,12 +13,11 @@ public class WeatherData {
 	public void measurementsChanged() {
 		int t = getTemp();
 		int w = getWid();
-		int p = getPre();
 		
 		List<BoardInterface> o = getObserves();
 		
 		for (BoardInterface board : o) {
-			board.update(t, w, p);
+			board.update(t, w, w);
 		}
 	}
 
@@ -56,9 +55,6 @@ public class WeatherData {
 		this.wid = wid;
 	}
 
-	public int getPre() {
-		return pre;
-	}
 
 	public void setPre(int pre) {
 		this.pre = pre;
